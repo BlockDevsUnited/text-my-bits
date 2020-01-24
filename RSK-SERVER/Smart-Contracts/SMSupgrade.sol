@@ -68,6 +68,7 @@ contract SMSUpgrade{
     }
 
     function transfer(uint __from, uint __to, uint256 amount) public{
+        require(IDs[__from]!=address(0));
         require(IDs[__to]!=address(0));
         address _from = IDs[__from];
         address _to = IDs[__to];
