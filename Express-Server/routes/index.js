@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const accountSid = 'AC52cfbbef2e6ff5a9e82cdfff3ba811b8';
-const authToken = '';
+const accountSid = 'ACeab53269a170044c8100b504c0589dcd';
+const authToken = '69430bb59b5669fe4b3834e146ca6ea9';
 const client = require('twilio')(accountSid, authToken);
 var crypto = require('crypto');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
@@ -45,7 +45,7 @@ console.log(wallet.address)
   console.log(contract)
 }
 async function transfer(from,to,amount) {
-  
+
    console.log(await contract.transfer(from,to,amount));
    return;
 
@@ -72,7 +72,7 @@ router.get('/', function(req, res, next) {
      from: '+12054481897',
      to: '+13022998401'
    })
-   
+
   .then(message => console.log(message.sid));
   **/
   res.render('index', { title: 'Express' });
@@ -92,15 +92,15 @@ router.post('/sms', async(req, res) => {
       OTP=ethers.utils.keccak256('0x'+OTP)
       console.log(OTP)
       let txData=TXData.get(OTP)
-      
+
       console.log(txData)
       let Value=txData.Value
       let sender=txData.User
       console.log(sender)
       console.log(Value)
-      
+
       TXData.set(OTP,{User:sender,Value:0,timestamp:get_timestamp()})
-    
+
       console.log(await contract.transfer(Number(sender),Number(from),Number(Value)))
 
       client.messages.create({
@@ -108,12 +108,12 @@ router.post('/sms', async(req, res) => {
         from: '+12054481897',
         to: sender
       }).then(message => console.log(message.sid));
- 
+
       twiml.message('your transaction id'+otp+'for '+Value+'has been redeemed. The transaction will go through shortly')
       res.writeHead(200, {'Content-Type': 'text/xml'});
       console.log('sending')
       res.end(twiml.toString());
-    
+
    }else if(message.slice(0,7)==="Balance" ){
       console.log(from);
       let address=await contract.getAddress(from);
@@ -121,12 +121,12 @@ router.post('/sms', async(req, res) => {
       let amount= await contract.balanceOf(address)
       console.log(amount+"amount")
       console.log(amount.toString())
-    
+
       twiml.message(amount.toString());
       res.writeHead(200, {'Content-Type': 'text/xml'});
       console.log('sending')
       res.end(twiml.toString());
-   }else{ 
+   }else{
       let end=message.slice(-8);
       let start=message.slice(0,15);
       let value=message.slice(15,length-9);
@@ -138,7 +138,7 @@ router.post('/sms', async(req, res) => {
 
       if(start+end == 'I want to send satoshis'){
         console.log('working')
-        let otp=get_randomTokenHex(4) 
+        let otp=get_randomTokenHex(4)
         let data={User:from,Value:value,timestamp:get_timestamp()}
         twiml.message(otp);
         otp=ethers.utils.keccak256('0x'+otp)
@@ -150,9 +150,9 @@ router.post('/sms', async(req, res) => {
       res.end(twiml.toString());
 
   }
-   
- 
-  
+
+
+
 });
 
 /**router.post('/sms', (req, res) => {
@@ -173,13 +173,13 @@ async function updatedHandler(message,from){
      OTP=ethers.utils.keccak256('0x'+OTP)
      console.log(OTP)
      let txData=TXData.get(OTP)
-     
+
      console.log(txData)
      let Value=txData.Value
      let sender=txData.User
      console.log(sender)
      console.log(Value)
-     
+
      TXData.set(OTP,{User:sender,Value:0,timestamp:get_timestamp()})
     */
      console.log(await contract.ValidateOTP(OTP,from))
@@ -195,7 +195,7 @@ async function updatedHandler(message,from){
      res.writeHead(200, {'Content-Type': 'text/xml'});
      console.log('sending')
      res.end(twiml.toString());
-   
+
   }else if(message.slice(0,7)==="Balance" ){
      console.log(from);
      let address=await contract.getAddress(from);
@@ -203,12 +203,12 @@ async function updatedHandler(message,from){
      let amount= await contract.balanceOf(address)
      console.log(amount+"amount")
      console.log(amount.toString())
-   
+
      twiml.message(amount.toString());
      res.writeHead(200, {'Content-Type': 'text/xml'});
      console.log('sending')
      res.end(twiml.toString());
-  }else{ 
+  }else{
      let end=message.slice(-8);
      let start=message.slice(0,15);
      let value=message.slice(15,length-9);
@@ -220,7 +220,7 @@ async function updatedHandler(message,from){
 
      if(start+end == 'I want to send satoshis'){
        console.log('working')
-       let otp=get_randomTokenHex(4) 
+       let otp=get_randomTokenHex(4)
        //let data={User:from,Value:value,timestamp:get_timestamp()}
        twiml.message(otp);
        otp=ethers.utils.keccak256('0x'+otp)
@@ -233,7 +233,7 @@ async function updatedHandler(message,from){
      res.end(twiml.toString());
 
  }
-  
+
 
 
 
@@ -247,8 +247,8 @@ router.post('/testsms', async(req, res) => {
   await transfer(sender,receiver,amount)
 
   //console.log(receipt)
-   
- 
+
+
   res.writeHead(200, {'Content-Type': 'text/xml'});
  // res.end(twiml.toString());
 });
@@ -259,14 +259,14 @@ router.post('/tests', async(req, res) => {
   amount = "1000"
   amount = ethers.utils.parseUnits(amount,0)
   console.log(amount.toString())
-  
-  
+
+
 
   await transfer(sender,receiver,amount)
 
-  
-   
- 
+
+
+
   res.writeHead(200, {'Content-Type': 'text/xml'});
  // res.end(twiml.toString());
 });
@@ -278,7 +278,7 @@ router.post('/OTP', function(req, res, next) {
      from: '+12054481897',
      to: '+13022998401'
    })
-   
+
   .then(message => console.log(message.sid));
   **/
  console.log(req.body.OTP)

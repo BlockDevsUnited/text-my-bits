@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
-    
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.4",
     "crypto": "^1.0.1",
     "debug": "~2.6.9",
     "ethers": "^4.0.43",

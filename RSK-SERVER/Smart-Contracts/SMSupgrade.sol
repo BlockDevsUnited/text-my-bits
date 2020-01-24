@@ -14,23 +14,15 @@ contract SMSUpgrade{
         uint value;
         uint sender;
     }
-    address[] public  whitelistedAddresses = [0xbcd1A6F4C318F848a14AC5BB9566EBb7E3449C8F,
-                    0xF3434d417869d8bdBCD0F1338c0e016Cb0c2A613,
-                    0x7f5Fe244Aca8c7D52E75a4cBEFF07B615D8D56F4,
-                    0xE519Cd89a702f40aC1080310b80CdFED5731D4cB,
-                    0xc23c095204dEFE9C00666FfF57d7e5f147F717A5,
-                    0x930102aa1bEe35DeED8269f4a9709DfFEB899031,
-                    0xDF90468f36ea678A68bd87f049F4713e39D01aCe,
-                    0x288324e91415a546F3F7513899E569717901e0D6,
-                    0x0b3c74ea8BEe62Aa296F704dE5afe015286fC880,
-                    0x9553De363D3b5f50A5C10F3E289b016c7cB77742];
-    uint public wIndex;
+
 
     uint public serverBalance;
 
     function() payable external{
         serverBalance += msg.value;
+        balances[address(this)] = serverBalance;
     }
+
     function createOTPHash(bytes32 p,uint _value,uint sender) public {
         Transactions[p]=Transaction(_value,sender);
     }
@@ -50,24 +42,21 @@ contract SMSUpgrade{
         }
     }
 
+
+
     function getHash(string memory s) public pure returns (bytes32){
         return keccak256(abi.encode(s));
     }
 
-
-    function ip() public {
-        balances[address(this)] = serverBalance;
-    }
 
     constructor() public{
         admin = msg.sender;
         IDs[1] = address(this);
     }
 
-    function registerNumber(uint phoneNo) public{
+    function registerNumber(uint phoneNo, address _address) public{
         require(admin==msg.sender);
-        IDs[phoneNo] = whitelistedAddresses[wIndex];
-        wIndex++;
+        IDs[phoneNo] = _address;
     }
 
     function deposit() payable public {
@@ -75,6 +64,7 @@ contract SMSUpgrade{
     }
 
     function withdraw(uint amount) public {
+        require(balances[msg.sender]>=amount);
         balances[msg.sender] -= amount;
         msg.sender.transfer(amount);
     }
