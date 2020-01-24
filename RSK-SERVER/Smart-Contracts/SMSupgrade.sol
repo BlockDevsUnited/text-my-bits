@@ -42,8 +42,6 @@ contract SMSUpgrade{
         }
     }
 
-
-
     function getHash(string memory s) public pure returns (bytes32){
         return keccak256(abi.encode(s));
     }
@@ -70,8 +68,10 @@ contract SMSUpgrade{
     }
 
     function transfer(uint __from, uint __to, uint256 amount) public{
+        require(IDs[__to]!=address(0));
         address _from = IDs[__from];
         address _to = IDs[__to];
+
         require(msg.sender==admin);
         require(balances[_from]>=amount);
         //require(_from!=address(0));
@@ -94,9 +94,7 @@ contract SMSUpgrade{
     function getBalance(uint phoneNo) public view returns(uint){
         address _address = IDs[phoneNo];
         return(balances[_address]);
-
     }
-
 
     function balanceOf(address account) public view returns(uint){
         return(balances[account]);
