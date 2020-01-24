@@ -1,13 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const accountSid = 'ACeab53269a170044c8100b504c0589dcd';
-const authToken = '69430bb59b5669fe4b3834e146ca6ea9';
+
 const client = require('twilio')(accountSid, authToken);
 var crypto = require('crypto');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 let TXData= new Map();
 let contractABI = require('./contract.json')
 let ethers = require('ethers')
+require('dotenv').config()
+
+const authToken =process.env.AUTHTOKEN;
 function get_timestamp() {
 
   var now = new Date();
@@ -32,7 +35,7 @@ async function initialize(){
 	// console.log(contract2)
   // contractInstance = contract2.at(contractAddress);
 	// console.log(contractInstance)
-let privateKey = '0x17ac27604be1689aeede64c164ed93c8cae17a10ca5b36fec764c5270ba27866';
+let privateKey =process.env.PRIVATEKEY;
 let provider = new ethers.providers.JsonRpcProvider("https://public-node.testnet.rsk.co");
 
 wallet = new ethers.Wallet(privateKey, provider);
