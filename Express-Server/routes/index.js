@@ -21,7 +21,7 @@ function get_timestamp() {
       ':' + now.getMilliseconds();
 
 }
-let contractAddress = "0x6c2b412837A72cEc3FA3FD0D9BFB30C29CC55069"
+let contractAddress = "0xe9c36a09e7cfd98998b54136783ed49c83bda407"
 
 
 initialize()
