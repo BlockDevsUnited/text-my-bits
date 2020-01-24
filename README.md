@@ -1,3 +1,3 @@
 
 
-![Text My Bits](https://imgur.com/a/xw727DG)
+![Text My Bits](https://imgur.com/a/xw727DG?raw=true)
