@@ -66,7 +66,12 @@ function get_randomTokenHex(len) {
       .toString('hex') // convert to hexadecimal format
       .slice(0, len).toUpperCase(); // return required number of characters
 }
-
+function create_phone_number_alias(_phonenumber){
+  let string=process.env.SECRET+_phonenumber.toString()
+  let hash=ethers.utils.hashMessage(string)
+  console.log(hash)
+  return parseInt(hash.slice(2,17))
+}
 /* GET home page. */
 router.get('/', function(req, res, next) {
   /**client.messages
@@ -85,6 +90,7 @@ router.post('/sms', async(req, res) => {
   const twiml = new MessagingResponse();
    //console.log(req.body)
    let from=req.body.From.slice(1)
+   from=create_phone_number_alias(from)
    //console.log(from)
    let message=req.body.Body
    let length=message.length
@@ -99,6 +105,7 @@ router.post('/sms', async(req, res) => {
       console.log(txData)
       let Value=txData.Value
       let sender=txData.User
+      sender=create_phone_number_alias(sender)
       console.log(sender)
       console.log(Value)
 
