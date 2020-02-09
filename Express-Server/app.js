@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
+require('dotenv').config()
 
 var app = express();
 
@@ -20,7 +21,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 const accountSid = 'ACeab53269a170044c8100b504c0589dcd';
-const authToken = '69430bb59b5669fe4b3834e146ca6ea9';
+const authToken = process.env.AUTHTOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 app.use('/', indexRouter);

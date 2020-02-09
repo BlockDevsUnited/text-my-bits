@@ -2,15 +2,17 @@ var express = require('express');
 var router = express.Router();
 const accountSid = 'ACeab53269a170044c8100b504c0589dcd';
 
-const client = require('twilio')(accountSid, authToken);
 var crypto = require('crypto');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 let TXData= new Map();
 let contractABI = require('./contract.json')
+
 let ethers = require('ethers')
 require('dotenv').config()
 
-const authToken =process.env.AUTHTOKEN;
+const authToken = process.env.AUTHTOKEN;
+const client = require('twilio')(accountSid, authToken);
+
 function get_timestamp() {
 
   var now = new Date();
@@ -24,8 +26,7 @@ function get_timestamp() {
       ':' + now.getMilliseconds();
 
 }
-let contractAddress = "0xe9c36a09e7cfd98998b54136783ed49c83bda407"
-
+let contractAddress = "0x314c563161b5139ba704e757385260cc5a7bd0f0"
 
 initialize()
 
@@ -35,15 +36,11 @@ async function initialize(){
 	// console.log(contract2)
   // contractInstance = contract2.at(contractAddress);
 	// console.log(contractInstance)
-let privateKey =process.env.PRIVATEKEY;
+let privateKey = process.env.PRIVATEKEY;
 let provider = new ethers.providers.JsonRpcProvider("https://public-node.testnet.rsk.co");
-
 wallet = new ethers.Wallet(privateKey, provider);
-console.log(wallet)
-console.log(provider)
-console.log(wallet.address)
 
-  contract = new ethers.Contract(contractAddress,contractABI.abi,wallet)
+  contract = new ethers.Contract(contractAddress,contractABI,wallet)
 	console.log("contract initialized")
   console.log(contract)
 }
@@ -115,7 +112,7 @@ router.post('/sms', async(req, res) => {
 
       client.messages.create({
         body: 'your transaction id'+otp+'for '+Value+'you created been redeemed. The transaction will go through shortly',
-        from: '+12054481897',
+        from: '+14387956502',
         to: sender
       }).then(message => console.log(message.sid));
 
@@ -197,7 +194,7 @@ async function updatedHandler(message,from){
 
      client.messages.create({
        body: 'your transaction id'+otp+'for '+Value+'you created been redeemed. The transaction will go through shortly',
-       from: '+12054481897',
+       from: '+14387956502',
        to: sender
      }).then(message => console.log(message.sid));
 
@@ -270,12 +267,7 @@ router.post('/tests', async(req, res) => {
   amount = ethers.utils.parseUnits(amount,0)
   console.log(amount.toString())
 
-
-
   await transfer(sender,receiver,amount)
-
-
-
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
  // res.end(twiml.toString());
