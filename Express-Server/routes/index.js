@@ -37,7 +37,7 @@ async function initialize(){
   // contractInstance = contract2.at(contractAddress);
 	// console.log(contractInstance)
 let privateKey = process.env.PRIVATEKEY;
-let provider = new ethers.providers.JsonRpcProvider("https://public-node.testnet.rsk.co");
+let provider = new ethers.providers.JsonRpcProvider("https://public-node.rsk.co");
 wallet = new ethers.Wallet(privateKey, provider);
 
   contract = new ethers.Contract(contractAddress,contractABI,wallet)
@@ -64,10 +64,12 @@ function get_randomTokenHex(len) {
       .slice(0, len).toUpperCase(); // return required number of characters
 }
 function create_phone_number_alias(_phonenumber){
+  console.log(_phonenumber)
   let string=process.env.SECRET+_phonenumber.toString()
   let hash=ethers.utils.hashMessage(string)
   console.log(hash)
-  return parseInt(hash.slice(2,17))
+ // return parseInt(hash.slice(2,17))
+ return hash;
 }
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -88,30 +90,32 @@ router.post('/sms', async(req, res) => {
    //console.log(req.body)
    let from=req.body.From.slice(1)
    from=create_phone_number_alias(from)
-   //console.log(from)
+   console.log("starting")
    let message=req.body.Body
    let length=message.length
 
    if(message.slice(0,7)==="Receive"){
       let OTP=message.slice(-4)
       let otp=OTP;
-      OTP=ethers.utils.keccak256('0x'+OTP)
+      otp=await contract.getHash(otp)
       console.log(OTP)
-      let txData=TXData.get(OTP)
+      let h=await contract.getHash(OTP)
+      let T=await contract.Transactions(h)
+       let Value=T.value.toString()
+       let sender=T.sender
+      
 
-      console.log(txData)
-      let Value=txData.Value
-      let sender=txData.User
-      sender=create_phone_number_alias(sender)
+    
+      
       console.log(sender)
       console.log(Value)
 
-      TXData.set(OTP,{User:sender,Value:0,timestamp:get_timestamp()})
+     
 
-      console.log(await contract.transfer(Number(sender),Number(from),Number(Value)))
+      console.log(await contract.transfer(sender,from,T.value))
 
       client.messages.create({
-        body: 'your transaction id'+otp+'for '+Value+'you created been redeemed. The transaction will go through shortly',
+        body: 'your transaction id'+otp+' for '+Value+'you created been redeemed. The transaction will go through shortly',
         from: '+14387956502',
         to: sender
       }).then(message => console.log(message.sid));
@@ -122,7 +126,9 @@ router.post('/sms', async(req, res) => {
       res.end(twiml.toString());
 
    }else if(message.slice(0,7)==="Balance" ){
-      console.log(from);
+      console.log(typeof(from));
+      console.log("jfoajfoiej")
+      console.log(await contract.getAddress(from))
       let address=await contract.getAddress(from);
       console.log(address+"address");
       let amount= await contract.balanceOf(address)
@@ -147,10 +153,12 @@ router.post('/sms', async(req, res) => {
         console.log('working')
         let otp=get_randomTokenHex(4)
         let data={User:from,Value:value,timestamp:get_timestamp()}
+
         twiml.message(otp);
-        otp=ethers.utils.keccak256('0x'+otp)
+        otp=await contract.getHash(otp)
         console.log(otp)
-        TXData.set(otp,data)
+        //TXData.set(otp,data)
+        console.log(await contract.createOTPHash(otp,value,from))
       }
       res.writeHead(200, {'Content-Type': 'text/xml'});
       console.log('sending')
