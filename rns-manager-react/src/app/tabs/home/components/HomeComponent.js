@@ -8,7 +8,7 @@ import { multilanguage } from 'redux-multilanguage';
 import { SingleAccountContainer, ManageAccountContainer } from '../containers';
 import Web3 from 'web3';
 import tmbABI from '../tmbABI.json';
-import {getWalletBalance, getTextingBalance} from '../actions';
+import {getWalletBalance, getTextingBalance, getAccount} from '../actions';
 
 
 class HomeComponent extends Component {
@@ -29,6 +29,7 @@ class HomeComponent extends Component {
   async loadBlockchainData() {
     const accounts = await this.web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
+    this.props.getAccount({account : accounts[0]})
 
     const wb = new this.web3.eth.getBalance(accounts[0]).then(payload => this.props.getWalletBalance({walletBalance: payload}))
     const tb = await this.contract.methods.getBalance("0x86e2073284B72256Fa674FfFa19B2449485F7192").call();
@@ -41,21 +42,15 @@ class HomeComponent extends Component {
     this.contract.methods.withdraw(value).send({from: this.state.account});
   }
   formatPage() {
-    if(!this.state.account){
-      return(
-        <div className="col-md-8 offset-md-2 accountBox">
-        <h1>Single Account Setup</h1>
-        <SingleAccountContainer />
-      </div>
-      )
-    }
     return(
-      <div className="col-md-8 offset-md-2 accountBox">
+    <div className="col-md-8 offset-md-2 accountBox">
       <h1>Manage Account</h1>
       <ManageAccountContainer 
         deposit = {this.deposit.bind(this)}
         withdraw = {this.withdraw.bind(this)}
       />
+      <h1>Register Account</h1>
+      <SingleAccountContainer />
     </div>
     )
   }
@@ -81,9 +76,10 @@ HomeComponent.propTypes = {
   }).isRequired,
   getWalletBalance: propTypes.func.isRequired,
   getTextingBalance: propTypes.func.isRequired,
+  getAccount: propTypes.func.isRequired,
 };
 
 export default connect(
   null,
-  {getWalletBalance, getTextingBalance},
+  {getWalletBalance, getTextingBalance, getAccount},
 )(multilanguage(HomeComponent));

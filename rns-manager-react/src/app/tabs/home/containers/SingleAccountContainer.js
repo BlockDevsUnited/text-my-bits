@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { SingleAccountComponent } from '../components';
 // import getAddressState from '../../search/operations';
-
+const mapStateToProps = state => ({
+  account: state.home.account,
+});
 const mapDispatchToProps = dispatch => ({
   // handleClick: address => dispatch(getAddressState(address)),
   handleClick: address => dispatch(()=> {
@@ -10,6 +12,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(SingleAccountComponent);

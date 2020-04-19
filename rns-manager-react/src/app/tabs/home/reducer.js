@@ -1,5 +1,5 @@
 import {
-  GET_WALLET_BALANCE, GET_TEXTING_BALANCE,
+  GET_WALLET_BALANCE, GET_TEXTING_BALANCE, GET_ACCOUNT
 } from './types';
 const initialState = {
   walletBalance: '',
@@ -18,6 +18,12 @@ const accountReducer = (state = initialState, action) => {
       return {
         ...state,
         textingBalance: action.payload.textingBalance,
+      };
+    }
+    case GET_ACCOUNT: {
+      return {
+        ...state,
+        account: action.payload.account,
       };
     }
     default: return state;
