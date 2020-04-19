@@ -1,0 +1,50 @@
+.register {
+  text-align: center;
+
+  .domain {
+    color: $blue;
+  }
+
+  .list-inline {
+    margin-bottom: 4em;
+    li {
+      display:inline-block;
+      margin: 1em .5em;
+      min-width: 222px;
+    }
+    div.btn, div.btn:hover {
+      padding: 1em 3em !important;
+      border-radius: 5px;
+      width: 100%;
+      background-color: #fff !important;
+      color: $blue;
+    }
+    div.btn.btn-active {
+      background-color: $gray !important;
+      color: #ffffff;
+    }
+  }
+
+  .commitConfirmedBox {
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid $blue;
+    border-radius: 8px;
+    p {
+      margin: .5em 0 0 0 ;
+    }
+  }
+
+  .btn {
+    padding: .5em 2em !important;
+    border-radius: 8px;
+  }
+  
+  .btn:hover {
+    border-color: $gray !important;
+    box-shadow: none !important;
+  }
+
+  
+}

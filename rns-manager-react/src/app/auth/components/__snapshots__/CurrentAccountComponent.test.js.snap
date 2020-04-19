@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentAccountComponent renders and matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <HashRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(CurrentAccountComponet)
+        handleCurrentClick={[MockFunction]}
+        handleLogOut={[MockFunction]}
+        name="foobar.rsk"
+        switchLoginClick={[MockFunction]}
+      >
+        <CurrentAccountComponet
+          currentLanguageCode="en"
+          dispatch={[Function]}
+          handleCurrentClick={[MockFunction]}
+          handleLogOut={[MockFunction]}
+          name="foobar.rsk"
+          strings={
+            Object {
+              "log_out": "log out",
+            }
+          }
+          switchLoginClick={[MockFunction]}
+        >
+          <div
+            className="current"
+          >
+            <Button
+              active={false}
+              className="switchButton"
+              disabled={false}
+              onClick={[MockFunction]}
+              type="button"
+              variant="primary"
+            >
+              <button
+                className="switchButton btn btn-primary"
+                disabled={false}
+                onClick={[MockFunction]}
+                type="button"
+              >
+                foobar.rsk
+              </button>
+            </Button>
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[MockFunction]}
+              type="button"
+              variant="outline-primary"
+            >
+              <button
+                className="btn btn-outline-primary"
+                disabled={false}
+                onClick={[MockFunction]}
+                type="button"
+              >
+                log out
+              </button>
+            </Button>
+          </div>
+        </CurrentAccountComponet>
+      </Connect(CurrentAccountComponet)>
+    </Router>
+  </HashRouter>
+</Provider>
+`;

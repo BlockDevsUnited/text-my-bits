@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultsComponent renders and matches snapshot when available 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <HashRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(SearchResultsComponent)
+        available={true}
+        blocked={false}
+        domain="foobar"
+        handleClick={[MockFunction]}
+        isSearching={false}
+        rifCost={6}
+      >
+        <SearchResultsComponent
+          available={true}
+          blocked={false}
+          currentLanguageCode="en"
+          dispatch={[Function]}
+          domain="foobar"
+          handleClick={[MockFunction]}
+          isSearching={false}
+          rifCost={6}
+          strings={
+            Object {
+              "available": "available",
+              "domain_not_available": "not available",
+              "register": "register",
+              "results": "Results",
+              "search_for_another": "Please search another domain",
+              "year": "year",
+            }
+          }
+        >
+          <div
+            className="results"
+          >
+            <ForwardRef
+              className="break-above"
+              noGutters={false}
+            >
+              <div
+                className="break-above row"
+              >
+                <div
+                  className="col-md-8 offset-md-2"
+                >
+                  <h2
+                    className="blue"
+                  >
+                    Results
+                  </h2>
+                </div>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              noGutters={false}
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-md-8 offset-md-2"
+                >
+                  <ForwardRef
+                    className="searchResults available"
+                    noGutters={false}
+                  >
+                    <div
+                      className="searchResults available row"
+                    >
+                      <Col
+                        md={4}
+                      >
+                        <div
+                          className="col-md-4"
+                        >
+                          <h3>
+                            foobar.rsk
+                          </h3>
+                        </div>
+                      </Col>
+                      <Col
+                        md={2}
+                      >
+                        <div
+                          className="col-md-2"
+                        >
+                          <p
+                            className="status blue"
+                          >
+                            available
+                          </p>
+                        </div>
+                      </Col>
+                      <Col
+                        md={4}
+                      >
+                        <div
+                          className="col-md-4"
+                        >
+                          <p
+                            className="cost"
+                          >
+                            <span
+                              className="rifPrice"
+                            >
+                              6
+                               rif
+                            </span>
+                            <span
+                              className="year"
+                            >
+                               / 
+                              year
+                            </span>
+                          </p>
+                        </div>
+                      </Col>
+                      <Col
+                        md={2}
+                      >
+                        <div
+                          className="col-md-2"
+                        >
+                          <Button
+                            active={false}
+                            className="register"
+                            disabled={false}
+                            onClick={[MockFunction]}
+                            type="button"
+                            variant="primary"
+                          >
+                            <button
+                              className="register btn btn-primary"
+                              disabled={false}
+                              onClick={[MockFunction]}
+                              type="button"
+                            >
+                              register
+                            </button>
+                          </Button>
+                        </div>
+                      </Col>
+                    </div>
+                  </ForwardRef>
+                </div>
+              </div>
+            </ForwardRef>
+          </div>
+        </SearchResultsComponent>
+      </Connect(SearchResultsComponent)>
+    </Router>
+  </HashRouter>
+</Provider>
+`;
+
+exports[`SearchResultsComponent renders and matches snapshot when not available 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <HashRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(SearchResultsComponent)
+        available={false}
+        blocked={false}
+        domain="foobar"
+        handleClick={[MockFunction]}
+        isSearching={false}
+        rifCost={2}
+      >
+        <SearchResultsComponent
+          available={false}
+          blocked={false}
+          currentLanguageCode="en"
+          dispatch={[Function]}
+          domain="foobar"
+          handleClick={[MockFunction]}
+          isSearching={false}
+          rifCost={2}
+          strings={
+            Object {
+              "available": "available",
+              "domain_not_available": "not available",
+              "register": "register",
+              "results": "Results",
+              "search_for_another": "Please search another domain",
+              "year": "year",
+            }
+          }
+        >
+          <div
+            className="results"
+          >
+            <ForwardRef
+              className="break-above"
+              noGutters={false}
+            >
+              <div
+                className="break-above row"
+              >
+                <div
+                  className="col-md-8 offset-md-2"
+                >
+                  <h2
+                    className="blue"
+                  >
+                    Results
+                  </h2>
+                </div>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              noGutters={false}
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-md-8 offset-md-2"
+                >
+                  <ForwardRef
+                    className="searchResults notAvailable"
+                    noGutters={false}
+                  >
+                    <div
+                      className="searchResults notAvailable row"
+                    >
+                      <Col
+                        md={6}
+                      >
+                        <div
+                          className="col-md-6"
+                        >
+                          <h3>
+                            foobar.rsk
+                          </h3>
+                        </div>
+                      </Col>
+                      <Col
+                        md={3}
+                      >
+                        <div
+                          className="col-md-3"
+                        >
+                          <p
+                            className="status"
+                          >
+                            not available
+                          </p>
+                        </div>
+                      </Col>
+                      <Col
+                        md={3}
+                      >
+                        <div
+                          className="col-md-3"
+                        >
+                          <p
+                            className="searchAnother"
+                          >
+                            Please search another domain
+                          </p>
+                        </div>
+                      </Col>
+                    </div>
+                  </ForwardRef>
+                </div>
+              </div>
+            </ForwardRef>
+          </div>
+        </SearchResultsComponent>
+      </Connect(SearchResultsComponent)>
+    </Router>
+  </HashRouter>
+</Provider>
+`;

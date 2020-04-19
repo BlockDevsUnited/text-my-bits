@@ -3,7 +3,7 @@ const http = require('http')
 const port = 3001
 
 let contractABI = require('./contract.json')
-let contractAddress = "0x1A84fF754C3c7cfa5643a48f4e7e8Ec369604c68"
+let contractAddress = "0x86e2073284B72256Fa674FfFa19B2449485F7192"
 
 let provider = ethers.getDefaultProvider('ropsten');
 let privateKey = ""
@@ -11,12 +11,6 @@ let secret = ""
 let hash
 wallet = new ethers.Wallet(privateKey, provider);
 contract = new ethers.Contract(contractAddress,contractABI,wallet)
-
-function getPhoneHash(phoneNumber){
-  let string=secret+phoneNumber.toString()
-  hash=ethers.utils.hashMessage(string)
-  return(hash)
-}
 
 async function getAdmin(){
   let admin = await contract.admin()
@@ -108,11 +102,6 @@ const requestHandler = async(request, response) => {
       console.log(responseString)
       response.end(responseString)
       return;
-    } else if(requestSplit[0]=="/getPhoneNoHash"){
-      let phoneNumber = requestSplit[1].split("&")[0].split("=")[1]
-      await getPhoneHash(phoneNumber)
-      console.log(hash)
-      response.end(hash)
     }
 
     else {

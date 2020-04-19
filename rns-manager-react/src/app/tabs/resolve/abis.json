@@ -1,0 +1,79 @@
+{
+  "rnsAbi": [
+    {
+      "constant": true,
+      "inputs": [
+        { "name": "node", "type": "bytes32" }
+      ],
+      "name": "resolver",
+      "outputs": [
+        { "name": "", "type": "address" }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "abstractResolverAbi": [
+    {
+      "constant": true,
+      "inputs": [
+        { "name": "interfaceID", "type": "bytes4" }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        { "name": "", "type": "bool" }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "addrResolverAbi": [
+    {
+      "constant": true,
+      "inputs": [
+        { "name": "node", "type": "bytes32" }
+      ],
+      "name": "addr",
+      "outputs": [
+        { "name": "", "type": "address" }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "chainAddrResolverAbi": [
+    {
+      "constant": true,
+      "inputs": [
+        { "name": "node", "type": "bytes32" },
+        { "name": "chain", "type": "bytes4" }
+      ],
+      "name": "chainAddr",
+      "outputs": [
+        { "name": "", "type": "string" }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x8be4b5f6"
+    }
+  ],
+  "nameResolverAbi": [
+    {
+      "constant": true,
+      "inputs": [
+        { "name": "node", "type": "bytes32" }
+      ],
+      "name": "name",
+      "outputs": [
+        { "name": "", "type": "string" }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toggleComponent defaults matches snapshot 1`] = `
+<ToggleComponent
+  labelLeft="leftLabel"
+  labelRight="rightLabel"
+  onChange={[MockFunction]}
+  value={false}
+>
+  <div
+    className="toggleSwitch"
+  >
+    <button
+      className="left active"
+      onClick={[Function]}
+      type="button"
+    >
+      leftLabel
+    </button>
+    <label
+      className="switch"
+      htmlFor="toggleSwitch"
+    >
+      <input
+        checked={false}
+        id="toggleSwitch"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="slider"
+      />
+    </label>
+    <button
+      className="right"
+      onClick={[Function]}
+      type="button"
+    >
+      rightLabel
+    </button>
+  </div>
+</ToggleComponent>
+`;
+
+exports[`toggleComponent toggleSwitch active matches snapshot 1`] = `
+<ToggleComponent
+  labelLeft="leftLabel"
+  labelRight="rightLabel"
+  onChange={[MockFunction]}
+  value={true}
+>
+  <div
+    className="toggleSwitch"
+  >
+    <button
+      className="left"
+      onClick={[Function]}
+      type="button"
+    >
+      leftLabel
+    </button>
+    <label
+      className="switch"
+      htmlFor="toggleSwitch"
+    >
+      <input
+        checked={true}
+        id="toggleSwitch"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="slider"
+      />
+    </label>
+    <button
+      className="right active"
+      onClick={[Function]}
+      type="button"
+    >
+      rightLabel
+    </button>
+  </div>
+</ToggleComponent>
+`;

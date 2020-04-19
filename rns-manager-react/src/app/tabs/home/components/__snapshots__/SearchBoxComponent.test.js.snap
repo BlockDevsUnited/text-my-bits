@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBoxComponent renders and matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(SearchBoxComponent)
+    handleClick={[MockFunction]}
+  >
+    <SearchBoxComponent
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      handleClick={[MockFunction]}
+      strings={
+        Object {
+          "blocked_domain": "domains with less than 5 characters are blocked. stay tuned, we are going to release them soon",
+          "invalid_name": "Invalid name. Must be lower case characters and/or numbers",
+          "search": "search",
+          "search_placeholder": "Find your domain",
+        }
+      }
+    >
+      <ForwardRef
+        className="searchBox"
+        noGutters={false}
+      >
+        <div
+          className="searchBox row"
+        >
+          <div
+            className="col-md-7 offset-md-1 searchInput"
+          >
+            <input
+              onChange={[Function]}
+              placeholder="Find your domain"
+              value=""
+            />
+            <span
+              className="blue"
+            >
+              .rsk
+            </span>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
+            >
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                search
+              </button>
+            </Button>
+          </div>
+        </div>
+      </ForwardRef>
+    </SearchBoxComponent>
+  </Connect(SearchBoxComponent)>
+</Provider>
+`;

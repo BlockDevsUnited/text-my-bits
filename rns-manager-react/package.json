@@ -1,0 +1,90 @@
+{
+  "name": "rns-manager-react",
+  "version": "2.0.0-beta.14",
+  "private": true,
+  "dependencies": {
+    "@githubprimer/octicons-react": "^8.5.0",
+    "@rsksmart/rns": "^1.4.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.3.1",
+    "connected-react-router": "^6.3.1",
+    "env-cmd": "^10.0.1",
+    "eth-ens-namehash": "^2.0.8",
+    "ethers": "^4.0.46",
+    "history": "^4.7.2",
+    "js-sha3": "^0.8.0",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.2.0",
+    "react": "^16.8.3",
+    "react-add-to-calendar": "^0.1.5",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.3",
+    "react-ga": "^2.5.7",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "2.1.5",
+    "react-switch": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-multilanguage": "^0.1.2",
+    "redux-thunk": "^2.3.0",
+    "rimble-ui": "^0.14.0",
+    "rskjs-util": "^1.0.3",
+    "styled-components": "^5.0.1",
+    "web3": "^1.2.6",
+    "web3-utils": "^1.2.4"
+  },
+  "scripts": {
+    "start": "env-cmd -f .env.local react-scripts start",
+    "start:testnet": "env-cmd -f .env.testnet react-scripts start",
+    "start:mainnet": "env-cmd -f .env.production react-scripts start",
+    "build:testnet": "env-cmd -f .env.testnet react-scripts build",
+    "build:mainnet": "env-cmd -f .env.production react-scripts build",
+    "test": "jest && eslint src",
+    "test:watch": "jest --watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "7.14.3",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "redux-mock-store": "^1.5.4"
+  },
+  "resolutions": {
+    "lodash": "^4.17.14",
+    "lodash.template": "^4.5.0",
+    "eslint-utils": "^1.4.1"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setupTests.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testEnvironment": "enzyme",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(gif|png|eot|svg)$": "<rootDir>/tests/config/mockImage.js"
+    }
+  }
+}

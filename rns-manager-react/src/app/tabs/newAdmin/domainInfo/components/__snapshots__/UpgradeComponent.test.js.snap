@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpgradeComponent renders and matches snapshop 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(UpgradeComponent)
+    handleClick={[MockFunction]}
+    isFifsMigrated={false}
+    isMigrating={false}
+  >
+    <UpgradeComponent
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      handleClick={[MockFunction]}
+      isFifsMigrated={false}
+      isMigrating={false}
+      strings={
+        Object {
+          "upgrade": "upgrade",
+          "upgrade_domain": "Upgrade domain",
+          "upgrade_domain_explanation": "The domain upgrade offers new functionalities and dynamic renovation. The upgrade requires a single transaction with your wallet, then your domain will be upgraded automatically.",
+        }
+      }
+    >
+      <div
+        className="upgrade major-section"
+      >
+        <ForwardRef
+          noGutters={false}
+        >
+          <div
+            className="row"
+          >
+            <Col>
+              <div
+                className="col"
+              >
+                <h2>
+                  Upgrade domain
+                </h2>
+              </div>
+            </Col>
+          </div>
+        </ForwardRef>
+        <ForwardRef
+          noGutters={false}
+        >
+          <div
+            className="row"
+          >
+            <Col
+              md={10}
+            >
+              <div
+                className="col-md-10"
+              >
+                <p>
+                  The domain upgrade offers new functionalities and dynamic renovation. The upgrade requires a single transaction with your wallet, then your domain will be upgraded automatically.
+                </p>
+              </div>
+            </Col>
+            <Col
+              md={2}
+            >
+              <div
+                className="col-md-2"
+              >
+                <Button
+                  active={false}
+                  disabled={false}
+                  onClick={[MockFunction]}
+                  type="button"
+                  variant="primary"
+                >
+                  <button
+                    className="btn btn-primary"
+                    disabled={false}
+                    onClick={[MockFunction]}
+                    type="button"
+                  >
+                    upgrade
+                  </button>
+                </Button>
+              </div>
+            </Col>
+          </div>
+        </ForwardRef>
+      </div>
+    </UpgradeComponent>
+  </Connect(UpgradeComponent)>
+</Provider>
+`;

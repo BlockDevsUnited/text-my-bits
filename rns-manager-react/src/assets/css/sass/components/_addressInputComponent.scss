@@ -1,0 +1,108 @@
+.addressInput {
+  .row {
+    width: 100%;
+    margin: 0;
+  }
+
+  button:first-letter {
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    box-shadow: none !important;
+    border: 1px solid $gray !important;
+    color: $gray;
+  }
+
+  .view {
+    border: 1px solid $gray;
+    padding: 10px 0px;
+    width: 100%;
+    font-size: .9em;
+    margin: 0 15px !important;
+
+    .label {
+      color: $blue;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .value {
+      text-align: center;
+    }
+
+    .value-prefix {
+      text-transform: capitalize;
+    }
+
+    .options {
+      text-align: right;
+    }
+
+    button, button:hover {
+      border: none !important;
+      background: $white;
+      margin: 0 !important;
+      padding: 1px 6px !important;
+    }
+  }
+
+  div.edit {
+    width: 100%;
+    margin: 1em 0;
+
+    .editLabel {
+      text-align: center;
+      font-size: .9em;
+    }
+
+    input, input:focus {
+      width: 100%;
+      border: 1px solid $gray !important;
+      padding:10px 20px;
+      border-radius: 12px;
+      color: $gray;
+    }
+
+    input::-webkit-input-placeholder {
+      text-align: center;
+      color: #E5E5E5;
+      font-size: .9em;
+    }
+
+    button {
+      padding:10px 20px !important;
+      margin-left: 5px;
+      border-radius: 15px;
+      width: 47%
+    }
+    
+    button.cancel {
+      border:1px solid $gray;
+      background: $white;
+      color: $gray;
+      font-weight: 300 !important;
+    }
+
+  }
+
+  div.delete {
+    background-color: $light-gray;
+    padding: 1em 2em;
+    margin: 1em auto;
+
+    button {
+      padding:10px 20px !important;
+      margin-left: 5px;
+      border-radius: 15px;
+      width: 47%
+    }
+    
+    button.cancel {
+      border:1px solid $gray;
+      background: $white;
+      color: $gray;
+      font-weight: 300 !important;
+    }
+  }
+}

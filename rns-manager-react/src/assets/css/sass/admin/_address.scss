@@ -1,0 +1,41 @@
+.yourAddress {
+  .addNew {
+    button.add, input, select {
+      display: block;
+      width: 100%;
+    }
+    button.add {
+      background: $blue;
+      padding: 10px !important;
+      color: $white;
+      border-radius: 15px;
+    }
+    select {
+      color: $gray;
+      padding: 12px 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    input {
+      border: 1px solid $gray;
+      border-radius: 12px;
+      padding: 10px;
+    }
+  }
+
+  .addressInput {
+    .label {
+      text-align: left !important;
+      img {
+        margin-right: 10px;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+.btn-primary.migrate {
+  border-radius: 15px;
+  padding: .75em 2em !important;
+}
