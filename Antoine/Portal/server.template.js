@@ -1,21 +1,22 @@
 let ethers = require('ethers');
 const http = require('http')
 const port = 3002
-const express = require('express');
-const cors = require('cors');
-const app = express();
-app.use(cors({
-  methods: 'GET, POST',
-  optionsSuccessStatus: 200,
-  origin: 'http://localhost:3000'
-}))
+
 let contractABI = require('./contract.json')
-let contractAddress = "0x1a84ff754c3c7cfa5643a48f4e7e8ec369604c68"
+let contractAddress = "0x1A84fF754C3c7cfa5643a48f4e7e8Ec369604c68"
 
 let provider = ethers.getDefaultProvider('ropsten');
 let privateKey = ""
+let secret = "superdupertrooper123"
+let hash
 wallet = new ethers.Wallet(privateKey, provider);
 contract = new ethers.Contract(contractAddress,contractABI,wallet)
+
+function getPhoneHash(phoneNumber){
+  let string=secret+phoneNumber.toString()
+  hash=ethers.utils.hashMessage(string)
+  return(hash)
+}
 
 async function getAdmin(){
   let admin = await contract.admin()
@@ -45,6 +46,7 @@ async function getBalance(phoneNoHash) {
 
 const requestHandler = async(request, response) => {
   console.log(request.url)
+
 	const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
@@ -106,6 +108,11 @@ const requestHandler = async(request, response) => {
       console.log(responseString)
       response.end(responseString)
       return;
+    } else if(requestSplit[0]=="/getPhoneNoHash"){
+      let phoneNumber = requestSplit[1].split("&")[0].split("=")[1]
+      await getPhoneHash(phoneNumber)
+      console.log(hash)
+      response.end(hash)
     }
 
     else {
