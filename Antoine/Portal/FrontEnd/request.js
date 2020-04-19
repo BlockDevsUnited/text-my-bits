@@ -28,9 +28,6 @@ async function getBalance(phoneNoHash) {
   console.log(response)
 }
 
-
-
-
 async function fetchConverters(){
 
   var xhttp = await createCORSRequest('GET', server + "/converters");
@@ -42,7 +39,6 @@ async function fetchConverters(){
   return new Promise(function(resolve) {
 		setTimeout(resolve, 0);
 		});
-
 }
 
 async function fetchCoords(){
@@ -86,7 +82,6 @@ async function sendRequest(xhttp,requestType,data){
     xhttp.send();
     return new Promise(function(resolve){})
 }
-
 
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
