@@ -1,0 +1,25 @@
+.subdomains {
+  .owner, .subdomain {
+    width: 100%;
+    padding:10px 10px; 
+    border-radius: 12px;
+    border: 1px solid $gray;
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px !important;
+    margin: .25em 0;
+    border: 1px solid $white;
+    background: $blue;
+    color: $white;
+  }
+
+  button.close {
+    border: none !important;
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+}

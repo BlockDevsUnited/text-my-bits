@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoLoginComponent should matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(AutoLoginComponent)
+    handleManageClick={[MockFunction]}
+    handleRegisterNewClick={[MockFunction]}
+  >
+    <AutoLoginComponent
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      handleManageClick={[MockFunction]}
+      handleRegisterNewClick={[MockFunction]}
+      strings={
+        Object {
+          "admin_domain": "Admin my domain",
+          "log_in": "log in",
+          "register_another_domain": "Register another domain",
+        }
+      }
+    >
+      <ForwardRef
+        noGutters={false}
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-4 offset-md-4"
+          >
+            <svg
+              fill="none"
+              height="23"
+              viewBox="0 0 37 23"
+              width="37"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 10.5L12.5 21L36 1"
+                stroke="#008FF7"
+                strokeWidth="2"
+              />
+            </svg>
+            <h2
+              className="blue small break-above"
+            >
+              Your domain has been registered
+            </h2>
+          </div>
+        </div>
+      </ForwardRef>
+      <ForwardRef
+        className="major-section"
+        noGutters={false}
+      >
+        <div
+          className="major-section row"
+        >
+          <div
+            className="col-md-4 offset-md-2 col-lg-3 offset-lg-3"
+          >
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[MockFunction]}
+              type="button"
+              variant="primary"
+            >
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                onClick={[MockFunction]}
+                type="button"
+              >
+                Admin my domain
+              </button>
+            </Button>
+          </div>
+          <div
+            className="col-md-4 col-lg-3"
+          >
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[MockFunction]}
+              type="button"
+              variant="primary"
+            >
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                onClick={[MockFunction]}
+                type="button"
+              >
+                Register another domain
+              </button>
+            </Button>
+          </div>
+        </div>
+      </ForwardRef>
+    </AutoLoginComponent>
+  </Connect(AutoLoginComponent)>
+</Provider>
+`;

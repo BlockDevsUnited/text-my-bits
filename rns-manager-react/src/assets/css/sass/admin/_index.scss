@@ -1,0 +1,43 @@
+.admin {
+
+  @import 'domainInfo';
+  @import 'subdomains';
+  @import 'address';
+  @import 'reverse';
+
+  margin-top: 75px;
+  
+  .btn-primary:not(:disabled):not(.disabled).active {
+    background-color: $light-gray;
+    border-color: $gray;
+    color: $gray;
+  }
+
+  .toggleSwitch {
+    text-align: right;
+  }
+
+  color: $gray;
+  text-align: left;
+
+  p {
+    font-size: .9em;
+  }
+
+  h1 {
+    font-size: 20px;
+    color: $blue;
+  }
+
+  h1:first-letter, h2:first-letter {
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 20px;
+    color:$blue;
+  }
+}
+
+@import 'transferModal';
+@import 'leftnav';

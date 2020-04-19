@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginDropdownComponent matches snapshot when open 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(LoginFormComponent)
+    authError={false}
+    domainInputInitialState=""
+    handleLogin={[MockFunction]}
+    showLoginInitState={true}
+  >
+    <LoginFormComponent
+      authError={false}
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      domainInputInitialState=""
+      handleLogin={[MockFunction]}
+      showLoginInitState={true}
+      strings={
+        Object {
+          "add_account": "Add account",
+          "enter": "Enter",
+          "invalid_name": "Invalid name. Must be lower case characters and/or numbers",
+          "not_domains_owner_message": "log out",
+          "your_domain": "Your domain",
+        }
+      }
+    >
+      <div
+        className="loginForm"
+      >
+        <h3>
+          Your domain
+        </h3>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="rskinput"
+          >
+            <input
+              onChange={[Function]}
+              value=""
+            />
+            <span>
+              .rsk
+            </span>
+          </div>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="primary"
+          >
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Enter
+            </button>
+          </Button>
+        </form>
+      </div>
+    </LoginFormComponent>
+  </Connect(LoginFormComponent)>
+</Provider>
+`;
+
+exports[`LoginDropdownComponent renders and matches snapshot when closed 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(LoginFormComponent)
+    authError={false}
+    domainInputInitialState=""
+    handleLogin={[MockFunction]}
+    showLoginInitState={false}
+  >
+    <LoginFormComponent
+      authError={false}
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      domainInputInitialState=""
+      handleLogin={[MockFunction]}
+      showLoginInitState={false}
+      strings={
+        Object {
+          "add_account": "Add account",
+          "enter": "Enter",
+          "invalid_name": "Invalid name. Must be lower case characters and/or numbers",
+          "not_domains_owner_message": "log out",
+          "your_domain": "Your domain",
+        }
+      }
+    >
+      <div
+        className="loginForm"
+      >
+        <Button
+          active={false}
+          className="showLogin"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+          variant="primary"
+        >
+          <button
+            className="showLogin btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            + 
+            Add account
+          </button>
+        </Button>
+      </div>
+    </LoginFormComponent>
+  </Connect(LoginFormComponent)>
+</Provider>
+`;

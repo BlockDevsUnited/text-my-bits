@@ -1,0 +1,61 @@
+[
+  {
+    "name": "addr",
+    "signature": "0x3b3b57de",
+    "abi": [
+      {
+        "constant": true,
+        "inputs": [
+          { "name": "node", "type": "bytes32" }
+        ],
+        "name": "addr",
+        "outputs": [
+          { "name": "", "type": "address" }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  },
+  {
+    "name": "chainAddr",
+    "signature": "0x8be4b5f6",
+    "abi": [
+      {
+        "constant": true,
+        "inputs": [
+          { "name": "node", "type": "bytes32" },
+          { "name": "chain", "type": "bytes4" }
+        ],
+        "name": "chainAddr",
+        "outputs": [
+          { "name": "", "type": "string" }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function",
+        "signature": "0x8be4b5f6"
+      }
+    ]
+  },
+  {
+    "name": "name",
+    "signature": "0x691f3431",
+    "abi": [
+      {
+        "constant": true,
+        "inputs": [
+          { "name": "node", "type": "bytes32" }
+        ],
+        "name": "name",
+        "outputs": [
+          { "name": "", "type": "string" }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  }
+]

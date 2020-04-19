@@ -1,0 +1,18 @@
+.copyButton {
+  display: inline-block;
+
+  button {
+    border: none;
+    background: $white;
+    margin-left:.25em;
+
+    img {
+      width: 25px;
+    }
+  }
+
+  .copyText {
+    position: absolute;
+    left: -8000px;
+  }
+}

@@ -1,0 +1,45 @@
+.requestDomain {
+  h3 {
+    font-size:1.1em;
+  }
+
+  p, label {
+    font-size: .8em;
+    margin: .5em 0;
+  }
+
+  p.blue {
+    font-size: .7em;
+  }
+
+  p.explanation {
+    font-size: .9em;
+  }
+
+  .fifsRegistration {
+    div.custom-switch {
+      display: inline-block;
+      label {
+        cursor: pointer;
+      }
+    }
+    div.overlay-helper {
+      display:inline-block;
+      margin:0 0 0 1em;
+      background-color: $gray;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  .alert {
+    width: 100%;
+    .close {
+      display: none;
+    }
+  }
+}

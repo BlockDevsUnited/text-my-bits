@@ -1,0 +1,40 @@
+.searchBox {
+  .searchInput {
+    padding: 6px 25px;
+    border-radius: 12px;
+    background-color: #fff !important;
+
+    input {
+      display: inline-block;
+      width: 90%;
+      font-size: 24px;
+      padding: .25em;
+      border: none;
+      text-align: center;
+    }
+
+    input::placeholder {
+      color: $gray;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      width: 10%;
+      font-size: 24px;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px 25px !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300 !important;
+    text-transform: capitalize;
+  }
+}

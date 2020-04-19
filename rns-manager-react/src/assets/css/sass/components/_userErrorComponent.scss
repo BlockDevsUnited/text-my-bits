@@ -1,0 +1,18 @@
+div.error {
+  width: 100%;
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid $red;
+  background-color: $light-red;
+  text-align: center;
+  position: relative;
+}
+
+div.error button, div.success button {
+  background: none !important;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: .5em .5em 1em 0;
+}

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyButtonComponent matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(CopyButtonComponent)
+    text="hello"
+  >
+    <CopyButtonComponent
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      strings={
+        Object {
+          "copied": "copied",
+          "copy_text": "Copy text",
+        }
+      }
+      text="hello"
+    >
+      <div
+        className="copyButton"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <Image
+            alt="Copy text"
+            fluid={false}
+            rounded={false}
+            roundedCircle={false}
+            src="mock-image"
+            thumbnail={false}
+          >
+            <img
+              alt="Copy text"
+              className=""
+              src="mock-image"
+            />
+          </Image>
+        </button>
+        <input
+          className="copyText"
+          defaultValue="hello"
+          type="text"
+        />
+      </div>
+    </CopyButtonComponent>
+  </Connect(CopyButtonComponent)>
+</Provider>
+`;

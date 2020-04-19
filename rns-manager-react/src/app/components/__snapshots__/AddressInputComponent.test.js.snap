@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressInputComponent renders without crashing 1`] = `
+<div
+  className="row addressInput"
+>
+  <div
+    className="row view"
+  >
+    <div
+      className="col-md-3 label"
+    >
+      Label
+    </div>
+    <div
+      className="col-md-7 value"
+    >
+      <span
+        className="value-prefix"
+      >
+        value prefix: 
+      </span>
+      Value
+    </div>
+    <div
+      className="col-md-2 options"
+    >
+      <button
+        className="edit"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="edit text"
+          src="mock-image"
+        />
+      </button>
+      <button
+        className="delete"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="delete string"
+          src="mock-image"
+        />
+      </button>
+    </div>
+  </div>
+  <UserWaitingComponent
+    message="waiting text string"
+    visible={false}
+  />
+  <Connect(UserErrorComponent)
+    handleCloseClick={[Function]}
+    message="error message text"
+    title="error title text"
+    visible={false}
+  />
+  <Connect(UserSuccessComponent)
+    address=""
+    handleCloseClick={[MockFunction]}
+    message="success message text"
+    title="success title text"
+    visible={false}
+  />
+</div>
+`;
+
+exports[`AddressInputComponent shows confirmation window when delete is clicked 1`] = `
+<div
+  className="row addressInput"
+>
+  <div
+    className="row view"
+  >
+    <div
+      className="col-md-3 label"
+    >
+      Label
+    </div>
+    <div
+      className="col-md-7 value"
+    >
+      <span
+        className="value-prefix"
+      >
+        value prefix: 
+      </span>
+      Value
+    </div>
+    <div
+      className="col-md-2 options"
+    >
+      <button
+        className="edit"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="edit text"
+          src="mock-image"
+        />
+      </button>
+      <button
+        className="delete"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="delete string"
+          src="mock-image"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="delete"
+  >
+    <p>
+      delete confirm text
+    </p>
+    <p>
+      <Button
+        active={false}
+        className="cancel"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+        variant="primary"
+      >
+        cancel string
+      </Button>
+      <Button
+        active={false}
+        className="submit"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+        variant="primary"
+      >
+        delete string
+      </Button>
+    </p>
+  </div>
+  <UserWaitingComponent
+    message="waiting text string"
+    visible={false}
+  />
+  <Connect(UserErrorComponent)
+    handleCloseClick={[Function]}
+    message="error message text"
+    title="error title text"
+    visible={false}
+  />
+  <Connect(UserSuccessComponent)
+    address=""
+    handleCloseClick={[MockFunction]}
+    message="success message text"
+    title="success title text"
+    visible={false}
+  />
+</div>
+`;

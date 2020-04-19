@@ -1,0 +1,11 @@
+.setup {
+  ul, ol {
+    li {
+      color: $gray;
+
+      span {
+        color: $blue;
+      }
+    }
+  }
+}

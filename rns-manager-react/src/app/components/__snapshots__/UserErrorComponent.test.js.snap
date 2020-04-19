@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserErrorComponent renders and matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(UserErrorComponent)>
+    <UserErrorComponent
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      handleCloseClick={[Function]}
+      message="Error Message"
+      strings={
+        Object {
+          "close": "Close",
+        }
+      }
+      title="Error"
+      visible={true}
+    >
+      <div
+        className="error"
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Close"
+            src="mock-image"
+          />
+        </button>
+        <p>
+          <strong>
+            Error
+          </strong>
+        </p>
+        <p>
+          Error Message
+        </p>
+      </div>
+    </UserErrorComponent>
+  </Connect(UserErrorComponent)>
+</Provider>
+`;

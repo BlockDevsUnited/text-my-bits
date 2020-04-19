@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeftNavComponent matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <HashRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(LeftNavComponent)
+        advancedView={false}
+        domain="foobar.rsk"
+        location="/newAdmin"
+      >
+        <LeftNavComponent
+          advancedView={false}
+          currentLanguageCode="en"
+          dispatch={[Function]}
+          domain="foobar.rsk"
+          location="/newAdmin"
+          strings={
+            Object {
+              "admin": "admin",
+              "advanced": "Advanced",
+              "basic": "Basic",
+              "domain_info": "Domain info",
+              "log_out": "log out",
+              "resolver": "resolver",
+              "subdomains": "subdomains",
+              "your_addresses": "Your addresses",
+            }
+          }
+        >
+          <Navbar
+            bg="light"
+            collapseOnSelect={false}
+            expand="md"
+            variant="light"
+          >
+            <nav
+              className="navbar navbar-expand-md navbar-light bg-light"
+            >
+              <NavbarBrand>
+                <span
+                  className="navbar-brand"
+                >
+                  foobar.rsk
+                </span>
+              </NavbarBrand>
+              <NavbarToggle
+                aria-controls="basic-navbar-nav"
+                label="Toggle navigation"
+              >
+                <button
+                  aria-controls="basic-navbar-nav"
+                  aria-label="Toggle navigation"
+                  className="navbar-toggler collapsed"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="navbar-toggler-icon"
+                  />
+                </button>
+              </NavbarToggle>
+              <NavbarCollapse
+                id="basic-navbar-nav"
+              >
+                <Collapse
+                  appear={false}
+                  dimension="height"
+                  getDimensionValue={[Function]}
+                  id="basic-navbar-nav"
+                  in={false}
+                  mountOnEnter={false}
+                  timeout={300}
+                  unmountOnExit={false}
+                >
+                  <Transition
+                    addEndListener={[Function]}
+                    appear={false}
+                    aria-expanded={null}
+                    enter={true}
+                    exit={true}
+                    id="basic-navbar-nav"
+                    in={false}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntered={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    onExiting={[Function]}
+                    timeout={300}
+                    unmountOnExit={false}
+                  >
+                    <div
+                      aria-expanded={null}
+                      className="navbar-collapse collapse"
+                      id="basic-navbar-nav"
+                    >
+                      <ul>
+                        <li>
+                          <Link
+                            className="active"
+                            to="/newAdmin"
+                          >
+                            <LinkAnchor
+                              className="active"
+                              href="#/newAdmin"
+                              navigate={[Function]}
+                            >
+                              <a
+                                className="active"
+                                href="#/newAdmin"
+                                onClick={[Function]}
+                              >
+                                Domain info
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className=""
+                            to="/newAdmin/addresses"
+                          >
+                            <LinkAnchor
+                              className=""
+                              href="#/newAdmin/addresses"
+                              navigate={[Function]}
+                            >
+                              <a
+                                className=""
+                                href="#/newAdmin/addresses"
+                                onClick={[Function]}
+                              >
+                                Your addresses
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className=""
+                            to="/newAdmin/subdomains"
+                          >
+                            <LinkAnchor
+                              className=""
+                              href="#/newAdmin/subdomains"
+                              navigate={[Function]}
+                            >
+                              <a
+                                className=""
+                                href="#/newAdmin/subdomains"
+                                onClick={[Function]}
+                              >
+                                subdomains
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Transition>
+                </Collapse>
+              </NavbarCollapse>
+            </nav>
+          </Navbar>
+        </LeftNavComponent>
+      </Connect(LeftNavComponent)>
+    </Router>
+  </HashRouter>
+</Provider>
+`;

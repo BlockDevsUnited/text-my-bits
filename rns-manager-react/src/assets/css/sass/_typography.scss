@@ -1,0 +1,52 @@
+h1.sub-heading {
+  font-size: 24px;
+  color: $gray;
+}
+
+h2 {
+  color: $gray;
+}
+
+h2.small {
+  font-size: 22px;
+}
+
+h2.normal-size {
+  font-size: 16px;
+  margin:0;
+  padding:0;
+}
+
+h3 {
+  color: $gray;
+}
+
+h1.blue, h2.blue, h3.blue, h4.blue, p.blue, span.blue {
+  color: $blue;
+}
+
+h2.gray, h3.gray, h4.gray {
+  color: $gray;
+}
+
+p {
+  color: $gray;
+  font-weight: 400 !important;
+}
+
+p.lead {
+  font-size: 20px;
+}
+
+label {
+  color: $gray;
+}
+
+p.explanation {
+  font-size: .8em !important;
+  color: $gray;
+}
+
+.caps-first:first-letter {
+  text-transform: uppercase;
+}

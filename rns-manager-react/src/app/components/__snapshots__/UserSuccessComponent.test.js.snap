@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserSuccessComponent renders and matches snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(UserSuccessComponent)>
+    <UserSuccessComponent
+      address=""
+      currentLanguageCode="en"
+      dispatch={[Function]}
+      handleCloseClick={[Function]}
+      message="Success Message"
+      strings={
+        Object {
+          "close": "Close",
+          "view_explorer": "View it on the explorer",
+        }
+      }
+      title="Success"
+      visible={true}
+    >
+      <div
+        className="success"
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Close"
+            src="mock-image"
+          />
+        </button>
+        <p>
+          <img
+            alt=""
+            src="mock-image"
+          />
+        </p>
+        <p>
+          <strong>
+            Success
+          </strong>
+        </p>
+        <p>
+          Success Message
+        </p>
+      </div>
+    </UserSuccessComponent>
+  </Connect(UserSuccessComponent)>
+</Provider>
+`;

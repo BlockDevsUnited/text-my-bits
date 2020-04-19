@@ -1,0 +1,32 @@
+.domainInfo {
+  @import 'renew';
+
+  button {
+    padding:10px 20px !important;
+    margin-left: 10px;
+  }
+  .domain {
+    font-size: 25px;
+
+    .response {
+      font-size: 16px;
+    }
+  }
+
+  .renew {
+    text-align: right;
+
+    button {
+      border-radius: 15px;
+    }
+  }
+}
+
+// mobile styles
+@media (max-width: 767.98px) {
+  .domainInfo {
+    .renew {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+$gray: #919191;
+$light-gray: #f7f7f7;
+$blue: #008CFF;
+$white: #ffffff;
+$red: #E02F2F;
+$light-red: rgba(232, 99, 99, 0.2);
+
+@import 'layout';
+@import 'header';
+@import 'footer';
+@import 'containers';
+@import 'columns';
+@import 'extends';
+@import 'errorMessages';
+@import 'typography';
+@import 'bootstrapReset';
+
+@import 'home/index';
+@import 'registration/registration-page';
+@import 'registration/commit-step';
+@import 'setupTab/setup';
+@import 'admin/index';
+@import 'components/index';
