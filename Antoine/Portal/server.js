@@ -6,7 +6,7 @@ let contractABI = require('./contract.json')
 let contractAddress = "0x86e2073284B72256Fa674FfFa19B2449485F7192"
 
 let provider = ethers.getDefaultProvider('ropsten');
-let privateKey = "0x1c0ef2dca168e5104a9e32a26887e4410ada6ba2758066738d17846396e27066"
+let privateKey = ""
 wallet = new ethers.Wallet(privateKey, provider);
 contract = new ethers.Contract(contractAddress,contractABI,wallet)
 
