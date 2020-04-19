@@ -1,12 +1,12 @@
 let ethers = require('ethers');
 const http = require('http')
-const port = 3001
+const port = 3002
 
 let contractABI = require('./contract.json')
 let contractAddress = "0x1A84fF754C3c7cfa5643a48f4e7e8Ec369604c68"
 
 let provider = ethers.getDefaultProvider('ropsten');
-let privateKey = "0x1c0ef2dca168e5104a9e32a26887e4410ada6ba2758066738d17846396e27066"
+let privateKey = ""
 let secret = "superdupertrooper123"
 let hash
 wallet = new ethers.Wallet(privateKey, provider);
