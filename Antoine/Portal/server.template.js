@@ -7,12 +7,12 @@ let contractAddress = "0x1A84fF754C3c7cfa5643a48f4e7e8Ec369604c68"
 
 let provider = ethers.getDefaultProvider('ropsten');
 let privateKey = ""
-let secret = "superdupertrooper123"
+let secret = ""
 let hash
 wallet = new ethers.Wallet(privateKey, provider);
 contract = new ethers.Contract(contractAddress,contractABI,wallet)
 
-function getPhoneHash(phoneNumber){
+function getPhoneNoHash(phoneNumber){
   let string=secret+phoneNumber.toString()
   hash=ethers.utils.hashMessage(string)
   return(hash)
@@ -82,8 +82,10 @@ const requestHandler = async(request, response) => {
 				return;
 
     }else if(requestSplit[0]=="/register"){
-      let phoneNoHash = requestSplit[1].split("&")[0].split("=")[1]
+      let phoneNumber = requestSplit[1].split("&")[0].split("=")[1]
       let address = requestSplit[1].split("&")[1].split("=")[1]
+      let phoneNoHash = getPhoneNoHash(phoneNumber)
+      console.log(phoneNoHash)
       await register(phoneNoHash,address)
       console.log(phoneNoHash,address)
       response.end("Successfully registered")
